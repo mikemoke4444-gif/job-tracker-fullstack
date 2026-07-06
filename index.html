@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>Job Tracker</h1>
+        <div class="user-profile">Mike</div>
+    </header>
+
+    <main class="container">
+        
+        <section class="stats-container">
+            <div class="stat-card" data-status="applied">
+                <h3>Applied</h3>
+                <p id="count-applied">0</p>
+            </div>
+            <div class="stat-card" data-status="interview">
+                <h3>Interview</h3>
+                <p id="count-interview">0</p>
+            </div>
+            <div class="stat-card" data-status="offer">
+                <h3>Offer</h3>
+                <p id="count-offer">0</p>
+            </div>
+            <div class="stat-card" data-status="rejected">
+                <h3>Rejected</h3>
+                <p id="count-rejected">0</p>
+            </div>
+        </section>
+
+        <div class="content-grid">
+            
+            <section class="form-section">
+                <h2>Add Job</h2>
+                <form id="job-form">
+                    <input type="hidden" id="job-id">
+                    
+                    <div class="form-group">
+                        <label for="company">Company</label>
+                        <input type="text" id="company" required placeholder="e.g., Google">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="position">Position</label>
+                        <input type="text" id="position" required placeholder="e.g., Frontend Developer">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <select id="status">
+                            <option value="applied">Applied</option>
+                            <option value="interview">Interview</option>
+                            <option value="offer">Offer</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="date-applied">Date Applied</label>
+                        <input type="date" id="date-applied" required>
+                    </div>
+                    
+                    <button type="submit" id="submit-btn">Add Job</button>
+                </form>
+            </section>
+
+            <section class="list-section">
+                
+                <div class="controls">
+                    <input type="text" id="search-input" placeholder="Search company or position...">
+                    
+                    <select id="filter-status">
+                        <option value="all">All Statuses</option>
+                        <option value="applied">Applied</option>
+                        <option value="interview">Interview</option>
+                        <option value="offer">Offer</option>
+                        <option value="rejected">Rejected</option>
+                    </select>
+
+                    <select id="sort-order">
+                        <option value="newest">Newest</option>
+                        <option value="oldest">Oldest</option>
+                    </select>
+                </div>
+
+                <div id="job-list">
+                    </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="js/storage.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
